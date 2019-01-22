@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" build="" main="MyClass" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Phone.java" package="" timestamp="21-Jan-2019 16:46:31">
+        <select from="841" to="841"/>
+        <scroll column="185" row="0"/>
+      </file>
+      <file name="Vector3D.java" package="" timestamp="21-Jan-2019 12:39:42">
+        <select from="841" to="841"/>
+        <scroll column="185" row="0"/>
+      </file>
+      <file name="MyClass.java" package="" timestamp="21-Jan-2019 12:37:36">
+        <select from="841" to="841"/>
+        <scroll column="185" row="0"/>
+      </file>
+      <file name="Triangle.java" package="" timestamp="21-Jan-2019 12:43:42">
+        <select from="841" to="841"/>
+        <scroll column="185" row="0"/>
+      </file>
+      <file name="Cat.java" package="" timestamp="21-Jan-2019 15:28:59">
+        <select from="841" to="841"/>
+        <scroll column="185" row="0"/>
+      </file>
+      <file name="Network.java" package="" timestamp="21-Jan-2019 16:45:39">
+        <select from="841" to="841"/>
+        <scroll column="185" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

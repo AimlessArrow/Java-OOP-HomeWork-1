@@ -30,7 +30,7 @@ public class Network {
   }
   
   public void getPhoneNetwork() {
-    for(int i=0; i<this.phoneBase.size(); i++) {
+    for(int i = 0; i < this.phoneBase.size(); i++) {
       System.out.print((this.phoneBase.get(i)).toString());
     }
   }

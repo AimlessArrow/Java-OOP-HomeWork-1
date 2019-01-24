@@ -13,14 +13,14 @@ public class MyClass {
     System.out.println(myCheshireCat);
     
     /* Класс Triangle */
-    Triangle myTriangle = new Triangle(2,2,2);
+    Triangle myTriangle = new Triangle(2, 2, 2);
     System.out.println(myTriangle);
     System.out.println("Triangle area: " + myTriangle.calcArea());
     
     /* Класс Vector3D */
-    Vector3D myVector = new Vector3D(1,2,3);
-    Vector3D myAnotherVector = new Vector3D(3,2,1);
-    Vector3D resultVector = new Vector3D(0,0,0);
+    Vector3D myVector = new Vector3D(1, 2, 3);
+    Vector3D myAnotherVector = new Vector3D(3, 2, 1);
+    Vector3D resultVector = new Vector3D(0, 0, 0);
     double scalarProduct = myVector.calcScalarProduct(myAnotherVector);
     System.out.println(scalarProduct);
     resultVector = myVector.addVector(myAnotherVector);

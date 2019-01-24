@@ -57,7 +57,7 @@ public class Triangle
       System.out.println("Incorrect input");
       return 0;
     } else {
-      double p = (this.a + this.b +this.c)/2;
+      double p = (this.a + this.b +this.c) / 2;
       double area = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));
       return area;
     }

@@ -1,79 +1,70 @@
 import java.util.*;
 
-public class Network{
+public class Network {
   private String operatorName;
   private ArrayList<String> phoneBase;
   
-  public Network(){
+  public Network() {
     phoneBase = new ArrayList<String>();
   }
   
-  public Network(String newOperatorName){
+  public Network(String newOperatorName) {
     phoneBase = new ArrayList<String>();
-    if(newOperatorName.isEmpty() || newOperatorName == null){
+    if(newOperatorName.isEmpty() || newOperatorName == null) {
       throw new IllegalArgumentException("Incorrect input");
-    }
-    else{
+    } else {
       this.operatorName = newOperatorName;
     }
   }
   
-  public String getOperatorName(){
+  public String getOperatorName() {
     return this.operatorName;
   }
   
-  public void setOperator(String newOperatorName){
-    if(newOperatorName.isEmpty() || newOperatorName == null){
+  public void setOperator(String newOperatorName) {
+    if(newOperatorName.isEmpty() || newOperatorName == null) {
       System.out.println("Incorrect input");
-    }
-    else{
+    } else {
       this.operatorName = newOperatorName;
     }
   }
   
-  public void getPhoneNetwork(){
-    for(int i=0; i<this.phoneBase.size(); i++){
+  public void getPhoneNetwork() {
+    for(int i=0; i<this.phoneBase.size(); i++) {
       System.out.print((this.phoneBase.get(i)).toString());
     }
   }
   
-  public void addPhoneNumber(String phoneNumber){
-    if(phoneNumber.isEmpty() || phoneNumber == null){
+  public void addPhoneNumber(String phoneNumber) {
+    if(phoneNumber.isEmpty() || phoneNumber == null) {
       System.out.println("Incorrect input");
-    }
-    else if(this.phoneBase == null){
+    } else if(this.phoneBase == null) {
       this.phoneBase.add(phoneNumber);
-    }
-    else if(this.phoneBase.contains(phoneNumber)){
+    } else if(this.phoneBase.contains(phoneNumber)) {
       System.out.println("The number is already in the base");
-    }
-    else{
+    } else {
       this.phoneBase.add(phoneNumber);
     }
   }
   
-  public void removePhoneNumber(String phoneNumber){
-    if(phoneNumber.isEmpty() || phoneNumber == null){
+  public void removePhoneNumber(String phoneNumber) {
+    if(phoneNumber.isEmpty() || phoneNumber == null) {
       System.out.println("Incorrect input");
-    }
-    else if(!this.phoneBase.contains(phoneNumber)){
+    } else if(!this.phoneBase.contains(phoneNumber)) {
       System.out.println("The number is not found");
-    }
-    else{
+    } else {
       int phoneIndex = this.phoneBase.indexOf(phoneNumber);
       this.phoneBase.remove(phoneIndex);
     }
   }
   
-  public boolean searchPhoneNumber(String targetPhoneNumber){
-    if(targetPhoneNumber.isEmpty() || targetPhoneNumber == null){
+  public boolean searchPhoneNumber(String targetPhoneNumber) {
+    if(targetPhoneNumber.isEmpty() || targetPhoneNumber == null) {
       System.out.println("Incorrect input");
       return false;
-    }
-    else if(this.phoneBase.contains(targetPhoneNumber)){
+    } else if(this.phoneBase.contains(targetPhoneNumber)) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }

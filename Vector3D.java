@@ -1,58 +1,47 @@
-public class Vector3D
-{
+public class Vector3D {
   private int x;
   private int y;
   private int z;
   
-  public Vector3D(){
+  public Vector3D() {
     
   }
   
-  public Vector3D(int newX, int newY, int newZ){
-    if(newX < 0 || newY < 0 || newZ < 0)
-    {
+  public Vector3D(int newX, int newY, int newZ) {
+    if(newX < 0 || newY < 0 || newZ < 0) {
       throw new IllegalArgumentException("Incorrect input");
-    }
-    else
-    {
+    } else {
       this.x = newX;
       this.y = newY;
       this.z = newZ;
     }
   }
   
-  public void setX(int newX)
-  {
+  public void setX(int newX) {
     this.x = newX;
   }
   
-  public void setY(int newY)
-  {
+  public void setY(int newY) {
       this.y = newY;
   }
   
-  public void setZ(int newZ)
-  {
+  public void setZ(int newZ) {
     this.z = newZ;
   }
   
-  public int getX()
-  {
+  public int getX() {
     return this.x;
   }
   
-  public int getY()
-  {
+  public int getY() {
     return this.y;
   }
   
-  public int getZ()
-  {
+  public int getZ() {
     return this.z;
   }
   
-  public Vector3D addVector(Vector3D anotherVector)
-  {
+  public Vector3D addVector(Vector3D anotherVector) {
     Vector3D result = new Vector3D();
     
     result.x = this.x + anotherVector.x;
@@ -62,16 +51,14 @@ public class Vector3D
     return result;
   }
   
-  public double calcScalarProduct(Vector3D anotherVector)
-  {
+  public double calcScalarProduct(Vector3D anotherVector) {
     double result;
     
     result = this.x * anotherVector.x + this.y * anotherVector.y + this.z * anotherVector.z;
     return result;
   }
   
-  public Vector3D calcVectorProduct(Vector3D anotherVector)
-  {
+  public Vector3D calcVectorProduct(Vector3D anotherVector) {
     Vector3D result = new Vector3D();
     
     result.x = this.y * anotherVector.z - this.z * anotherVector.y;
@@ -82,8 +69,7 @@ public class Vector3D
   }
   
   @Override
-  public String toString()
-  {
+  public String toString() {
     return "Vector3D [x=" + this.x + ", y=" + this.y + 
       ", z=" + this.z + "]";
   }

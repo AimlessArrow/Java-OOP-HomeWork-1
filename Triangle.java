@@ -4,9 +4,7 @@ public class Triangle
   private int b;
   private int c;
   
-  public Triangle() {
-    
-  }
+  public Triangle() {}
   
   public Triangle(int newA, int newB, int newC) {
     if(newA < 1 || newB < 1 || newC < 1) {

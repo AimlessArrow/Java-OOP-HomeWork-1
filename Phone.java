@@ -2,9 +2,7 @@ public class Phone{
   private String phoneNumber;
   private Network phoneNetwork;
   
-  public Phone() {
-    
-  }
+  public Phone() {}
   
   public Phone(String newPhoneNumber) {
     if(newPhoneNumber.isEmpty() || newPhoneNumber == null) {

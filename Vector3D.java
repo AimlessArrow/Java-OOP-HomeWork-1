@@ -3,9 +3,7 @@ public class Vector3D {
   private int y;
   private int z;
   
-  public Vector3D() {
-    
-  }
+  public Vector3D() {}
   
   public Vector3D(int newX, int newY, int newZ) {
     if(newX < 0 || newY < 0 || newZ < 0) {

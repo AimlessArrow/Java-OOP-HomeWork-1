@@ -9,9 +9,7 @@ public class Cat {
     private int age;
     private String mood;
     
-    public Cat() {
-      
-    }
+    public Cat() {}
  
     public Cat(String newBreed, String newHairColour, int newAge, String newMood, String newName) {
         if(newBreed.isEmpty() || newBreed == null 

@@ -1,7 +1,3 @@
-/*
- * 1) Создание класcа Cat
- *
- */
 public class Cat {
     private String name;
     private String breed;

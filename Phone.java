@@ -1,4 +1,4 @@
-public class Phone{
+public class Phone {
   private String phoneNumber;
   private Network phoneNetwork;
   

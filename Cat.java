@@ -2,164 +2,111 @@
  * 1) Создание класcа Cat
  *
  */
-public class Cat
-{
-    // Name
+public class Cat{
     private String name;
-    // Breed
     private String breed;
-    // Hair colour
-    private String hair_colour;
-    // Age
+    private String hairColour;
     private int age;
-    // Mood
     private String mood;
     
-    // Стандартный конструктор
-    public Cat()
-    {
-      this.breed = "Безпородная";
-      this.age = 0;
-      this.hair_colour = "Чёрный";
-      this.mood = "Спокойное";
-      this.name = "Барсик";
+    public Cat(){
+      
     }
  
-    // Перегруженный конcтруктор
-    public Cat(String new_breed, String new_hair_colour, int new_age, String new_mood, String new_name)
-    {
-        // Обрабатываем пользовательский ввод
-        // в случае некорректного ввода возвращаем исключение с текстом ошибки.
-        // Порода устанавливается в конструкторе т.к. порода не меняется в течении жизни кошки  
-      if(new_breed.isEmpty() || new_breed == null 
-             || new_hair_colour.isEmpty() || new_hair_colour == null
-             || new_age < 0
-             || new_mood.isEmpty() || new_mood == null
-             || new_name.isEmpty() || new_name == null)
-        {
-            throw new IllegalArgumentException("Данные введены некорректно! (Пустая строка либо Null значение)");
+    public Cat(String newBreed, String newHairColour, int newAge, String newMood, String newName){
+        if(newBreed.isEmpty() || newBreed == null 
+             || newHairColour.isEmpty() || newHairColour == null
+             || newAge < 0
+             || newMood.isEmpty() || newMood == null
+             || newName.isEmpty() || newName == null){
+            throw new IllegalArgumentException("Incorrect input");
         }
-        else
-        {
-            this.breed = new_breed;
-            this.hair_colour = new_hair_colour;
-            this.age = new_age;
-            this.mood = new_mood;
-            this.name = new_name;
+        else{
+            this.breed = newBreed;
+            this.hairColour = newHairColour;
+            this.age = newAge;
+            this.mood = newMood;
+            this.name = newName;
         }
     }
     
-    public void set_breed(String new_breed)
-    {
-        // При обработке сеттеров проверяем ввод и при некорректном 
-        // значении выводим предупреждение
-        if(new_breed.isEmpty() || new_breed == null)
-        {
-          System.out.println("Данные введены некорректно! (Пустая строка либо Null значение)");
+    public void setBreed(String newBreed){
+        if(newBreed.isEmpty() || newBreed == null){
+          System.out.println("Incorrect input");
         }
-        else
-        {
-          this.breed = new_breed;
+        else{
+          this.breed = newBreed;
         }
     }
     
-    public void set_mood(String new_mood)
-    {
-        // При обработке сеттеров проверяем ввод и при некорректном 
-        // значении выводим предупреждение
-        if(new_mood.isEmpty() || new_mood == null)
-        {
-          System.out.println("Данные введены некорректно! (Пустая строка либо Null значение)");
+    public void setMood(String newMood){
+        if(newMood.isEmpty() || newMood == null){
+          System.out.println("Incorrect input");
         }
-        else
-        {
-          this.mood = new_mood;
+        else{
+          this.mood = newMood;
         }
     }
     
-    public void set_hair_colour(String new_hair_colour)
-    {
-        // При обработке сеттеров проверяем ввод и при некорректном 
-        // значении выводим предупреждение
-        if(new_hair_colour.isEmpty() || new_hair_colour == null)
-        {
-          System.out.println("Данные введены некорректно! (Пустая строка либо Null значение)");
+    public void setHairColour(String newHairColour){
+        if(newHairColour.isEmpty() || newHairColour == null){
+          System.out.println("Incorrect input");
         }
-        else
-        {
-          this.mood = new_hair_colour;
+        else{
+          this.mood = newHairColour;
         }
     }
  
-    public void set_age(int new_age)
-    {
-        // При обработке сеттеров проверяем ввод и при некорректном 
-        // значении выводим предупреждение
-        if(new_age < 0)
-        {
-          System.out.println("Данные введены некорректно! (Меньше нуля)");
+    public void setAge(int newAge){
+        if(newAge < 0){
+          System.out.println("Incorrect input");
         }
-        else
-        {
-          this.age = new_age;
+        else{
+          this.age = newAge;
         }
     }
  
-    public void set_name(String new_name)
-    {
-        // При обработке сеттеров проверяем ввод и при некорректном 
-        // значении выводим предупреждение
-        if(new_name.isEmpty() || new_name == null)
-        {
-          System.out.println("Данные введены некорректно! (Пустая строка либо Null значение)");
+    public void setName(String newName){
+        if(newName.isEmpty() || newName == null){
+          System.out.println("Incorrect input");
         }
-        else
-        {
-          this.name = new_name;
+        else{
+          this.name = newName;
         }
     }
  
-    // Геттеры для свойств класса
-    public String get_breed()
-    {
+    public String getBreed(){
       return this.breed;
     }
     
-    public String get_hair_colour()
-    {
-      return this.hair_colour;
+    public String getHairColour(){
+      return this.hairColour;
     }
     
-    public int get_age()
-    {
+    public int getAge(){
       return this.age;
     }
     
-    public String get_mood()
-    {
+    public String getMood(){
       return this.mood;
     }
     
-    public String get_name()
-    {
+    public String getName(){
       return this.name;
     }
     
-    public void purr()
-    {
+    public void purr(){
       System.out.println("Purrrrrrrr...");
     }
     
-    public void play()
-    {
-      this.set_mood("Игривое");
+    public void play(){
+      this.setMood("Playful");
     }
     
     @Override
-    public String toString()
-    {
+    public String toString(){
       return "Cat [name=" + this.name + ", breed=" + this.breed + 
-        ", hair_colour=" + this.hair_colour + ", age=" + this.age + ", mood=" +
+        ", hair_colour=" + this.hairColour + ", age=" + this.age + ", mood=" +
         this.mood + "]";
     }
 }

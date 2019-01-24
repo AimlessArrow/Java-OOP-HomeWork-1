@@ -1,63 +1,47 @@
-public class Phone
-{
-  // Номер телефона
-  private String phone_number;
-  // Ссылка на оператора сети после регистрации
-  private Network phone_network;
+public class Phone{
+  private String phoneNumber;
+  private Network phoneNetwork;
   
-  public Phone()
-  {
+  public Phone(){
     
   }
   
-  public Phone(String new_phone_number)
-  {
-    if(new_phone_number.isEmpty() || new_phone_number == null)
-    {
-      throw new IllegalArgumentException("Данные введены некорректно! (Пустая строка либо Null значение)");
+  public Phone(String newPhoneNumber){
+    if(newPhoneNumber.isEmpty() || newPhoneNumber == null){
+      throw new IllegalArgumentException("Incorrect input");
     }
-    else
-    {
-      this.phone_number = new_phone_number;
+    else{
+      this.phoneNumber = newPhoneNumber;
     }
   }
   
-  public String get_phone_number()
-  {
-    return this.phone_number;
+  public String getPhoneNumber(){
+    return this.phoneNumber;
   }
   
-  public void set_phone_number(String new_phone_number)
-  {
-    if(new_phone_number.isEmpty() || new_phone_number == null)
-    {
-      System.out.println("Введены некорректные данные (Пустая строка)");
+  public void setPhoneNumber(String newPhoneNumber){
+    if(newPhoneNumber.isEmpty() || newPhoneNumber == null){
+      System.out.println("Incorrect input");
     }
-    else
-    {
-      this.phone_number = new_phone_number;
+    else{
+      this.phoneNumber = newPhoneNumber;
     }
   }
   
-  public void register_phone(Network phone_operator)
-  {
-    phone_operator.add_phone_number(this.phone_number);
-    this.phone_network = phone_operator;
+  public void registerPhone(Network phoneOperator){
+    phoneOperator.addPhoneNumber(this.phoneNumber);
+    this.phoneNetwork = phoneOperator;
   }
   
-  public void call(String target_phone_number)
-  {
-    if(target_phone_number.isEmpty() || target_phone_number == null)
-    {
-      System.out.println("Введены некорректные данные (Пустая строка)");
+  public void call(String targetPhoneNumber){
+    if(targetPhoneNumber.isEmpty() || targetPhoneNumber == null){
+      System.out.println("Incorrect input");
     }
-    else if(this.phone_network.search_phone_number(target_phone_number))
-    {
-      System.out.println("Звонок совершён успешно");
+    else if(this.phoneNetwork.searchPhoneNumber(targetPhoneNumber)){
+      System.out.println("Call successfull");
     }
-    else
-    {
-      System.out.println("Номер телефона не найден в базе оператора");
+    else{
+      System.out.println("The number is not found");
     }
   }
 }

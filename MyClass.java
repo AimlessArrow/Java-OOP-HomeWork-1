@@ -1,42 +1,40 @@
-public class MyClass 
-{
-  public static void main(String args[]) 
-  {
-    // Класс Cat
-    Cat my_cat = new Cat();
-    my_cat.set_breed("Сиамская");
-    my_cat.set_hair_colour("Серый");
-    my_cat.set_mood("Игривое");
-    my_cat.set_age(5);
-    my_cat.set_name("Собака");
-    System.out.println(my_cat);
+public class MyClass {
+  public static void main(String args[]) {
+    /* Класс Cat */
+    Cat myCat = new Cat();
+    myCat.setBreed("Aegean");
+    myCat.setHairColour("White and grey");
+    myCat.setMood("Irritated");
+    myCat.setAge(5);
+    myCat.setName("Tom");
+    System.out.println(myCat);
     
-    Cat my_cheshire_cat = new Cat("Чеширская", "Серый", 5, "Спокойное", "Кот Котский");
-    System.out.println(my_cheshire_cat);
+    Cat myCheshireCat = new Cat("Munchkin", "White", 5, "Calm", "Snowflake");
+    System.out.println(myCheshireCat);
     
-    // Класс Triangle
-    Triangle my_triangle = new Triangle(2,2,2);
-    System.out.println(my_triangle);
-    System.out.println("Площадь треугольника: " + my_triangle.calc_area());
+    /* Класс Triangle */
+    Triangle myTriangle = new Triangle(2,2,2);
+    System.out.println(myTriangle);
+    System.out.println("Triangle area: " + myTriangle.calcArea());
     
-    // Класс Vector3D
-    Vector3D my_vector = new Vector3D(1,2,3);
-    Vector3D my_another_vector = new Vector3D(3,2,1);
-    Vector3D result_vector = new Vector3D(0,0,0);
-    result_vector = my_vector.add_vector(my_another_vector);
-    System.out.println(result_vector);
-    result_vector = my_vector.calc_scalar_product(my_another_vector);
-    System.out.println(result_vector);
-    result_vector = my_vector.calc_vector_product(my_another_vector);
-    System.out.println(result_vector);
+    /* Класс Vector3D */
+    Vector3D myVector = new Vector3D(1,2,3);
+    Vector3D myAnotherVector = new Vector3D(3,2,1);
+    Vector3D resultVector = new Vector3D(0,0,0);
+    double scalarProduct = myVector.calcScalarProduct(myAnotherVector);
+    System.out.println(scalarProduct);
+    resultVector = myVector.addVector(myAnotherVector);
+    System.out.println(resultVector);
+    resultVector = myVector.calcVectorProduct(myAnotherVector);
+    System.out.println(resultVector);
     
-    // Класс Phone и Network
-    Phone my_phone = new Phone("+77771231234");
-    Phone target_phone = new Phone("+77773211234");
+    /* Класс Phone и Network */
+    Phone myPhone = new Phone("+77771231234");
+    Phone targetPhone = new Phone("+77773211234");
     Network tele2 = new Network("Tele2");
-    my_phone.register_phone(tele2);
-    my_phone.call(target_phone.get_phone_number());
-    target_phone.register_phone(tele2);
-    my_phone.call(target_phone.get_phone_number());
+    myPhone.registerPhone(tele2);
+    myPhone.call(targetPhone.getPhoneNumber());
+    targetPhone.registerPhone(tele2);
+    myPhone.call(targetPhone.getPhoneNumber());
   }
 }

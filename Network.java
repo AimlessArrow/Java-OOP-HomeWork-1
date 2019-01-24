@@ -1,113 +1,79 @@
 import java.util.*;
 
-public class Network
-{
-  // Название сотового оператора
-  private String operator_name;
-  // База телефонных номеров(Thread-safe)
-  private Vector<String> phone_base;
+public class Network{
+  private String operatorName;
+  private ArrayList<String> phoneBase;
   
-  // Конструкторы
-  public Network()
-  {
-    // Ининциализируем вектор
-    phone_base = new Vector<String>();
+  public Network(){
+    phoneBase = new ArrayList<String>();
   }
   
-  public Network(String new_operator_name)
-  {
-    // Ининциализируем вектор
-    phone_base = new Vector<String>();
-    // Обработчик вводных данных
-    if(new_operator_name.isEmpty() || new_operator_name == null)
-    {
-      throw new IllegalArgumentException("Данные введены некорректно! (Пустая строка либо Null значение)");
+  public Network(String newOperatorName){
+    phoneBase = new ArrayList<String>();
+    if(newOperatorName.isEmpty() || newOperatorName == null){
+      throw new IllegalArgumentException("Incorrect input");
     }
-    else
-    {
-      this.operator_name = new_operator_name;
-    }    
-  }
-  
-  // Сеттеры и геттеры
-  public String get_operator_name()
-  {
-    return this.operator_name;
-  }
-  
-  public void set_operator(String new_operator_name)
-  {
-    // Обработчик вводных данных
-    if(new_operator_name.isEmpty() || new_operator_name == null)
-    {
-      System.out.println("Данные введены некорректно");
-    }
-    else
-    {
-      this.operator_name = new_operator_name;
+    else{
+      this.operatorName = newOperatorName;
     }
   }
   
-  public void get_phone_network()
-  {
-    for(int i=0;i<this.phone_base.size();i++)
-    {
-      System.out.print((this.phone_base.get(i)).toString());
+  public String getOperatorName(){
+    return this.operatorName;
+  }
+  
+  public void setOperator(String newOperatorName){
+    if(newOperatorName.isEmpty() || newOperatorName == null){
+      System.out.println("Incorrect input");
+    }
+    else{
+      this.operatorName = newOperatorName;
     }
   }
   
-  // Добавление номера в базу
-  public void add_phone_number(String phone_number)
-  {
-    if(phone_number.isEmpty() || phone_number == null)
-    {
-      System.out.println("Данные введены некорректно");
-    }
-    else if(this.phone_base == null)
-    {
-      this.phone_base.add(phone_number);
-    }
-    else if(this.phone_base.contains(phone_number))
-    {
-      System.out.println("Номер телефона уже в базе");
-    }
-    else
-    {
-      this.phone_base.add(phone_number);
+  public void getPhoneNetwork(){
+    for(int i=0; i<this.phoneBase.size(); i++){
+      System.out.print((this.phoneBase.get(i)).toString());
     }
   }
   
-  // Удаление номера из базы
-  public void remove_phone_number(String phone_number)
-  {
-    if(phone_number.isEmpty() || phone_number == null)
-    {
-      System.out.println("Данные введены некорректно");
+  public void addPhoneNumber(String phoneNumber){
+    if(phoneNumber.isEmpty() || phoneNumber == null){
+      System.out.println("Incorrect input");
     }
-    else if(!this.phone_base.contains(phone_number))
-    {
-      System.out.println("Номер телефона не найден в базе");
+    else if(this.phoneBase == null){
+      this.phoneBase.add(phoneNumber);
     }
-    else
-    {
-      int phone_index = this.phone_base.indexOf(phone_number);
-      this.phone_base.remove(phone_index);
+    else if(this.phoneBase.contains(phoneNumber)){
+      System.out.println("The number is already in the base");
+    }
+    else{
+      this.phoneBase.add(phoneNumber);
     }
   }
   
-  public boolean search_phone_number(String target_phone_number)
-  {
-    if(target_phone_number.isEmpty() || target_phone_number == null)
-    {
-      System.out.println("Данные введены некорректно");
+  public void removePhoneNumber(String phoneNumber){
+    if(phoneNumber.isEmpty() || phoneNumber == null){
+      System.out.println("Incorrect input");
+    }
+    else if(!this.phoneBase.contains(phoneNumber)){
+      System.out.println("The number is not found");
+    }
+    else{
+      int phoneIndex = this.phoneBase.indexOf(phoneNumber);
+      this.phoneBase.remove(phoneIndex);
+    }
+  }
+  
+  public boolean searchPhoneNumber(String targetPhoneNumber){
+    if(targetPhoneNumber.isEmpty() || targetPhoneNumber == null){
+      System.out.println("Incorrect input");
       return false;
     }
-    else if(this.phone_base.contains(target_phone_number))
-    {
+    else if(this.phoneBase.contains(targetPhoneNumber)){
       return true;
     }
-    else
-    {
+    else{
       return false;
     }
   }

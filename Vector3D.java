@@ -4,84 +4,79 @@ public class Vector3D
   private int y;
   private int z;
   
-  public Vector3D()
-  {
+  public Vector3D(){
     
   }
   
-  public Vector3D(int new_x, int new_y, int new_z)
-  {
-    if(new_x < 0 || new_y < 0 || new_z < 0)
+  public Vector3D(int newX, int newY, int newZ){
+    if(newX < 0 || newY < 0 || newZ < 0)
     {
-      throw new IllegalArgumentException("Данные введены некорректно! (Значение меньше нуля)");
+      throw new IllegalArgumentException("Incorrect input");
     }
     else
     {
-      this.x = new_x;
-      this.y = new_y;
-      this.z = new_z;
+      this.x = newX;
+      this.y = newY;
+      this.z = newZ;
     }
   }
   
-  public void set_x(int new_x)
+  public void setX(int newX)
   {
-    this.x = new_x;
+    this.x = newX;
   }
   
-  public void set_y(int new_y)
+  public void setY(int newY)
   {
-      this.y = new_y;
+      this.y = newY;
   }
   
-  public void set_z(int new_z)
+  public void setZ(int newZ)
   {
-    this.z = new_z;
+    this.z = newZ;
   }
   
-  public int get_x()
+  public int getX()
   {
     return this.x;
   }
   
-  public int get_y()
+  public int getY()
   {
     return this.y;
   }
   
-  public int get_z()
+  public int getZ()
   {
     return this.z;
   }
   
-  public Vector3D add_vector(Vector3D another_vector)
+  public Vector3D addVector(Vector3D anotherVector)
   {
     Vector3D result = new Vector3D();
     
-    result.x = this.x + another_vector.x;
-    result.y = this.y + another_vector.y;
-    result.z = this.z + another_vector.z;
+    result.x = this.x + anotherVector.x;
+    result.y = this.y + anotherVector.y;
+    result.z = this.z + anotherVector.z;
     
     return result;
   }
   
-  public Vector3D calc_scalar_product(Vector3D another_vector)
+  public double calcScalarProduct(Vector3D anotherVector)
   {
-    Vector3D result = new Vector3D();
+    double result;
     
-    result.x = this.x * another_vector.x;
-    result.y = this.y * another_vector.y;
-    result.z = this.z * another_vector.z;
-    
+    result = this.x * anotherVector.x + this.y * anotherVector.y + this.z * anotherVector.z;
     return result;
   }
   
-  public Vector3D calc_vector_product(Vector3D another_vector)
+  public Vector3D calcVectorProduct(Vector3D anotherVector)
   {
     Vector3D result = new Vector3D();
     
-    result.x = this.y * another_vector.z - this.z * another_vector.y;
-    result.y = this.x * another_vector.z - this.z * another_vector.x;
-    result.z = this.x * another_vector.y - this.y * another_vector.x;
+    result.x = this.y * anotherVector.z - this.z * anotherVector.y;
+    result.y = this.x * anotherVector.z - this.z * anotherVector.x;
+    result.z = this.x * anotherVector.y - this.y * anotherVector.x;
     
     return result;
   }

@@ -9,109 +9,101 @@ public class Triangle
     
   }
   
-  public Triangle(int new_a, int new_b, int new_c)
+  public Triangle(int newA, int newB, int newC)
   {
-    if(new_a < 1 || new_b < 1 || new_c < 1)
+    if(newA < 1 || newB < 1 || newC < 1)
     {
-      throw new IllegalArgumentException("Данные введены некорректно! (Значение меньше единицы)");
+      throw new IllegalArgumentException("Incorrect input");
     }
     else
     {
-      this.a = new_a;
-      this.b = new_b;
-      this.c = new_c;
+      this.a = newA;
+      this.b = newB;
+      this.c = newC;
     }
   }
   
-  public void set_a(int new_a)
+  public void setA(int newA)
   {
-    if(new_a < 1)
+    if(newA < 1)
     {
-      System.out.println("Данные введены некорректно! (Значение меньше единицы)");
+      System.out.println("Incorrect input");
     }
     else
     {
-      this.a = new_a;
+      this.a = newA;
     }
   }
   
-  public void set_b(int new_b)
+  public void setB(int newB)
   {
-    if(new_b < 1)
+    if(newB < 1)
     {
-      System.out.println("Данные введены некорректно! (Значение меньше единицы)");
+      System.out.println("Incorrect input");
     }
     else
     {
-      this.b = new_b;
+      this.b = newB;
     }
   }
   
-  public void set_c(int new_c)
+  public void setC(int newC)
   {
-    if(new_c < 1)
+    if(newC < 1)
     {
-      System.out.println("Данные введены некорректно! (Значение меньше единицы)");
+      System.out.println("Incorrect input");
     }
     else
     {
-      this.c = new_c;
+      this.c = newC;
     }
   }
   
-  public int get_a()
+  public int getA()
   {
     return this.a;
   }
   
-  public int get_b()
+  public int getB()
   {
     return this.b;
   }
   
-  public int get_c()
+  public int getC()
   {
     return this.c;
   }
   
-  public double calc_area()
+  public double calcArea()
   {
     if(this.a < 1 || this.b < 1 || this.c < 1)
     {
-      System.out.println("Данные заданы некорректно! (Значение меньше единицы)");
+      System.out.println("Incorrect input");
       return 0;
     }
     else
     {
-      // По формуле Герона
-      // Полупериметр p
       double p = (this.a + this.b +this.c)/2;
-      // Площадь S
-      double s = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));
-      return s;
+      double area = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));
+      return area;
     }
   }
   
-  // Перегружаем функцию
-  public double calc_area(int new_a, int new_b, int new_c)
+  public double calcArea(int newA, int newB, int newC)
   {
-    if(new_a < 1 || new_b < 1 || new_c < 1)
+    if(newA < 1 || newB < 1 || newC < 1)
     {
-      System.out.println("Данные введены некорректно! (Значение меньше единицы)");
+      System.out.println("Incorrect input");
       return 0;
     }
     else
     {
-      // Обновляем значения свойств класса
-      this.a = new_a;
-      this.b = new_b;
-      this.c = new_c;
-      // По формуле Герона
-      // Полупериметр p
+      this.a = newA;
+      this.b = newB;
+      this.c = newC;
       double p = (this.a + this.b +this.c)/2;
-      // Площадь S
-      double s = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));
-      return s;
+      double area = Math.sqrt(p*(p - this.a)*(p - this.b)*(p - this.c));
+      return area;
     }
   }
   
